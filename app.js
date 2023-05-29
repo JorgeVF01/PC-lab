@@ -46,6 +46,7 @@ app.post("/", async (req,res)=> {
  result = result.slice(0,result.length-1)
  const bug = pythonProcess.stderr?.toString()?.trim();
  console.log(result);
+ console.log(bug);
  let result_object = {};
  result.forEach((obj)=>{
   const comp_object = JSON.parse(obj)
