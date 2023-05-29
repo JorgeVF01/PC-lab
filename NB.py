@@ -1,6 +1,6 @@
-
-import numpy as np
 import pyAgrum as gum
+import numpy as np
+
 import json
 
 with open("request.txt","r") as file:
