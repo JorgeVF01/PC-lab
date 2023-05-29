@@ -1,0 +1,196 @@
+<%- include('partials/header1') %>
+
+
+
+<body >
+<h2>Constructor de PC</h2>
+<br>
+    <h4>En esta ventana podrás seleccionar los componentes con los que ya cuentas con el fin de darte una recomendación para los componentes que aún no tienes.
+        Para esto primero elige el esquema de prioridad para los componentes del PC.
+    </h4>
+    <br>
+<div class="container">
+<main>
+
+
+  <div class="row g-5">
+
+    <div class="col-md-7 col-lg-8">
+
+      <form class="needs-validation" action="/" method="POST" novalidate>
+        <div class="container">
+            <h3>Elige el esquema de contrucción para tu próximo PC:</h3>
+            <br>
+        <ul>
+            <li>
+                <div class="form-check">
+              <input class="form-check-input" style="display: none;" type="radio" value="Scheme_1" name="scheme" id="myCheckbox1" checked>
+              <label class="form-check-label" id="scheme_selector" for="myCheckbox1"><img src="scheme_1.png" /></label>
+            </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input style="display: none;" class="form-check-input" value="Scheme_2" name="scheme" type="radio" id="myCheckbox2" >
+                    <label class="form-check-label" id="scheme_selector" for="myCheckbox2"><img src="scheme_2.png" /></label>
+                  </div>
+          
+              
+            </li>
+        
+          </ul>
+        </div>
+        <h4>Ahora elige los componentes que ya tienes o los que son invariables en tu decisión:</h4>
+        <br>
+        <div class="row g-3">
+            
+
+         
+          <div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" name="sw_proce" id="sw_proce" onclick="unAbleProc(this)" >
+  <label class="form-check-label" for="flexSwitchCheckDefault">Procesador:</label>
+</div>
+
+          <div class="col-sm-6">
+
+            <input class="form-control" id="proce" list="proces" name="proce" disabled  required/></label>
+    <datalist id="proces">
+
+        <option value="AMD Ryzen 9 7950x"></option>
+      
+      <option value="AMD Ryzen 5 7600x">
+      <option value="AMD Ryzen 7 7800x3D">
+      <option value="Intel® Core i9">
+      <option value="Intel® Core i7">
+        <option value="Intel® Core i5"></option>
+    </datalist>
+            <div class="invalid-feedback">
+              Valor requerido.
+            </div>
+          </div>
+
+          
+
+
+        <hr class="my-4">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" name="sw_placa" id="sw_placa" onclick="unAblePlaca(this)" >
+            <label class="form-check-label" for="flexSwitchCheckDefault">Placa Madre:</label>
+          </div>
+          
+                    <div class="col-sm-6">
+          
+                      <input class="form-control" id="placa" list="placas" name="placa" disabled  required/></label>
+              <datalist id="placas">
+          
+                  <option value="Z690"></option>
+                
+                <option value="H670">
+                <option value="B660">
+                <option value="X570">
+                <option value="B550">
+                  <option value="A520"></option>
+              </datalist>
+                      <div class="invalid-feedback">
+                        Valor requerido.
+                      </div>
+                    </div>
+          
+                    
+          
+          
+                  <hr class="my-4">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" name="sw_gpu" id="sw_gpu" onclick="unAbleGPU(this)" >
+                    <label class="form-check-label" for="flexSwitchCheckDefault">GPU:</label>
+                  </div>
+                  
+                            <div class="col-sm-6">
+                  
+                              <input class="form-control" id="gpu" list="gpus" name="gpu" disabled required /></label>
+                      <datalist id="gpus">
+                  
+                          <option value="RTX 4090"></option>
+                        
+                        <option value="RTX 4070">
+                        <option value="RTX 3070TI">
+                        <option value="RX 7900XTX">
+                        <option value="RX 6800">
+                          <option value="RX 6600"></option>
+                      </datalist>
+                              <div class="invalid-feedback">
+                                Valor requerido.
+                              </div>
+                            </div>
+                  
+                            
+                  
+                  
+                          <hr class="my-4">
+            
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" name="sw_cooler" id="sw_cooler" onclick="unAbleCooler(this)" >
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Sistema de Enfriamiento:</label>
+                          </div>
+                          
+                                    <div class="col-sm-6">
+                          
+                                      <input class="form-control" id="cooler" list="coolers" name="cooler" disabled required /></label>
+                              <datalist id="coolers">
+                          
+                                  <option value="Cooler Master MasterLiquid Lite 240"></option>
+                                
+                                <option value="NZXT Kraken 120">
+                                <option value="Mars Gaming ML360W">
+                                <option value="Cooler Master MasterLiquid ML360 Illusion">
+                                <option value="ARCTIC Liquid Freezer II 240">
+                                  <option value="Corsair iCUE H150i ELITE LCD"></option>
+                              </datalist>
+                                      <div class="invalid-feedback">
+                                        Valor requerido.
+                                      </div>
+                                    </div>
+                          
+                                    
+                          
+                          
+                                  <hr class="my-4">
+                    
+                                  <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="sw_power" id="sw_power" onclick="unAblePower(this)" >
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Fuente de Poder:</label>
+                                  </div>
+                                  
+                                            <div class="col-sm-6">
+                                  
+                                              <input class="form-control" id="power" list="powers" name="power" disabled  required/></label>
+                                      <datalist id="powers">
+                                  
+                                          <option value="EVGA 600 GD 80 PLUS Gold"></option>
+                                        
+                                        <option value="Fuente NzXT C650 650 Watts 80 Plus Gold">
+                                        <option value="Redragon PSU007 80+ Gold 850 W">
+                                        <option value="RM850, 850 W, 80 Plus Gold">
+                                        <option value="Thermaltake Toughpower 1200W Gold">
+                                          <option value="Nzxt C1200 Gold 1200w"></option>
+                                      </datalist>
+                                              <div class="invalid-feedback">
+                                                Valor requerido.
+                                              </div>
+                                            </div>
+                                  
+                                            
+                                  
+                                  
+                                          <hr class="my-4">
+        
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Consultar</button>
+      </form>
+    </div>
+  </div>
+</main>
+<br> <br>
+
+
+<%- include('partials/footer3') %>
+

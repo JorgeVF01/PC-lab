@@ -1,0 +1,105 @@
+
+</div>
+</div>
+<div class="footer-padding"></div>
+  <div class="footer">
+    <p>©  2023 </p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+
+
+  </script>
+  <script language="javascript">
+    function checkInt() {
+        var check = document.getElementById('isint');
+        var zip_code = document.getElementById('cp').value;
+        var code = parseInt(zip_code);
+        if (Number.isInteger(code) || zip_code==='') {
+            check.innerHTML = '<span id="isint" class="text-muted"></span>';
+        }  else if(!Number.isInteger(code)) {
+          check.innerHTML = '<span style="color:red">El CP debe ser numérico</span>';
+
+        }
+    }
+</script>
+
+<script type="text/javascript">
+  function unAblePlaca(chk){
+        document.getElementById("placa").disabled = chk.checked ? false : true;
+
+  }
+
+  function unAbleProc(chk){
+        document.getElementById("proce").disabled = chk.checked ? false : true;
+  }
+  function unAbleGPU(chk){
+        document.getElementById("gpu").disabled = chk.checked ? false : true;
+  }
+  function unAbleCooler(chk){
+        document.getElementById("cooler").disabled = chk.checked ? false : true;
+  }
+
+  function unAblePower(chk){
+        document.getElementById("power").disabled = chk.checked ? false : true;
+  }
+
+  
+  var currentlyCheckedCount = 0
+
+function disableRemainingCheckboxes() {
+  Array.from(document.querySelectorAll('input[type="checkbox"]:not(:checked)')).forEach(function(element) {
+    element.disabled = 'disabled'
+  })
+}
+
+function enableAllCheckboxes() {
+  Array.from(document.querySelectorAll('input[type="checkbox"]')).forEach(function(element) {
+    element.disabled = undefined
+  })
+
+}
+
+Array.from(document.querySelectorAll("input[type='checkbox']")).forEach(function(checkbox) {
+  checkbox.addEventListener('change', onCheckboxClick)
+})
+
+function onCheckboxClick() {
+  if(this.checked) {
+    currentlyCheckedCount++
+  } else {
+    currentlyCheckedCount--
+  }
+
+  if(currentlyCheckedCount == 4) {
+    disableRemainingCheckboxes()
+  } else {
+    enableAllCheckboxes()
+  }
+}
+</script>
+</body>
+</html>
+</body>
+</html>

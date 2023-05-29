@@ -1,0 +1,1 @@
+{"scheme":"Scheme_1","sw_proce":"on","proce":"Intel® Core i9","sw_gpu":"on","gpu":"RTX 4070","sw_cooler":"on","cooler":"NZXT Kraken 120"}

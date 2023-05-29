@@ -1,0 +1,37 @@
+<%- include('partials/header4') %>
+
+<body >
+  <main >
+    <h2>Recomendaciones</h2>
+    <h5>A continuación se muetran tablas de probabilidades para los componentes que quieres obtener además de nuestra recomendación final.</h5>
+    <br>
+    <% Object.keys(results).forEach(function(key){ %>
+        <h3><%= key %>:</h3>
+
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <% Object.keys(results[key]).forEach(function(llave){ %>
+                <th scope="col"><%= llave %></th>
+                <% })%>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% Object.keys(results[key]).forEach(function(llave){ %>
+                <td scope="col"><%= results[key][llave] %></td>
+                <% })%>
+
+          </tr>
+          
+        </tbody>
+      </table>
+      <b>Te recomendamos el componente: <%= Object.keys(results[key]).reduce((a, b) => results[key][a]> results[key][b] ? a : b);%></b>
+      <br>
+      <br>
+      <hr>
+      <% })%>
+  </main>
+  <%- include('partials/footer3') %>
