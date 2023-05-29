@@ -7,7 +7,7 @@ const { spawnSync } = require('child_process');
 
 
 const usuario = {user:'',pass:''};
-
+const PORT = process.env.PORT || 3000;
 
 var auth = false;
 const app = express();
@@ -60,6 +60,6 @@ app.post("/", async (req,res)=> {
 
 
 
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log("Server running");
 });
