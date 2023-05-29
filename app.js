@@ -38,7 +38,7 @@ app.post("/", async (req,res)=> {
 
   fs.writeFileSync('request.txt', data);
   console.log('file created');
-  const pythonProcess = spawnSync('python', [
+  const pythonProcess = spawnSync('python3', [
     'NB.py',
 
   ]);
