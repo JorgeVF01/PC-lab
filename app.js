@@ -43,7 +43,7 @@ app.post("/", async (req,res)=> {
 
   ]);
  let result = pythonProcess.stdout.toString().split("\n");
- result = result.slice(0,result.length-1)
+ result = result.slice(0,result.length-1);
  const bug = pythonProcess.stderr?.toString()?.trim();
  console.log(result);
  console.log(bug);
@@ -60,7 +60,9 @@ app.post("/", async (req,res)=> {
 
 
 
-
+app.use(function(req,res){
+  res.status(404).render('404');
+});
 app.listen(PORT, function() {
   console.log("Server running");
 });
